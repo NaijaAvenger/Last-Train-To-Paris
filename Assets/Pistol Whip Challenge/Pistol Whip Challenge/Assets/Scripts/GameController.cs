@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    public float lives = 3f;
+    public float lives = 5f;
     public TextMeshProUGUI livesText;
 
     // Start is called before the first frame update

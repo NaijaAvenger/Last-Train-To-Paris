@@ -9,6 +9,9 @@ public class Gameover : MonoBehaviour
     public GameObject gameOver;
     public GameController controller;
 
+    public AudioSource audioSource;
+    public AudioClip hit;
+
     private void Awake()
     {
         head.SetActive(true);
@@ -20,6 +23,7 @@ public class Gameover : MonoBehaviour
         {
             controller.lives -= 1;
             Destroy(other.gameObject);
+            audioSource.PlayOneShot(hit);
             if (controller.lives <= 0)
             {
                 StartCoroutine(GameOver());

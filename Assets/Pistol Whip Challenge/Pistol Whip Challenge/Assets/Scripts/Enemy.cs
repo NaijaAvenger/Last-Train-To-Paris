@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     Vector3 GetTarget()
     {
-        return ((Camera.main.transform.position - shooter.barrelLocation.position) / 3) + new Vector3(0, 0, 2);
+        return ((Camera.main.transform.position - shooter.barrelLocation.position) / 3) + new Vector3(0, 0, Random.Range(0,2));
     }
 
     // Update is called once per frame
