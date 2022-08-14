@@ -8,10 +8,14 @@ public class GameController : MonoBehaviour
     public float lives = 5f;
     public TextMeshProUGUI livesText;
 
+    public float score = 0f;
+    public TextMeshProUGUI scoreText;
+
     // Start is called before the first frame update
     void Start()
     {
         livesText.text = "Lives: " + lives.ToString();
+        scoreText.text = "Score: " + score.ToString();
     }
 
     // Update is called once per frame
@@ -22,5 +26,6 @@ public class GameController : MonoBehaviour
         {
             lives = 0;
         }
+        scoreText.text = "Score: " + score.ToString();
     }
 }

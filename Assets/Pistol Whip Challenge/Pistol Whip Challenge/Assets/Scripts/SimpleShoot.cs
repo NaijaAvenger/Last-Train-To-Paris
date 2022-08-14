@@ -6,7 +6,7 @@ using TMPro;
 public class SimpleShoot : MonoBehaviour
 {
     public int maxammo = 10;
-    private int currentammo;
+    public int currentammo;
 
     public TMPro.TextMeshPro text;
     public GameObject line;
@@ -77,7 +77,7 @@ public class SimpleShoot : MonoBehaviour
         if (line)
         {
             GameObject liner = Instantiate(line);
-            liner.GetComponent<LineRenderer>().SetPositions(new Vector3[] { barrelLocation.position, barrelLocation.position + barrelLocation.forward * 100 });
+            liner.GetComponent<LineRenderer>().SetPositions(new Vector3[] { barrelLocation.position, barrelLocation.position + barrelLocation.forward * shotPower });
 
             Destroy(liner, 0.5f);
         }
@@ -94,6 +94,4 @@ public class SimpleShoot : MonoBehaviour
         casing.GetComponent<Rigidbody>().AddExplosionForce(550f, (casingExitLocation.position - casingExitLocation.right * 0.3f - casingExitLocation.up * 0.6f), 1f);
         casing.GetComponent<Rigidbody>().AddTorque(new Vector3(0, Random.Range(100f, 500f), Random.Range(10f, 1000f)), ForceMode.Impulse);
     }
-
-
 }

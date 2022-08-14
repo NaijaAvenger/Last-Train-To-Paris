@@ -6,11 +6,16 @@ TagManager:
   tags:
   - bullet
   - end
+  - target
+  - gun
+  - shield
+  - rgun
+  - lgun
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - targets
   - Water
   - UI
   - 

@@ -5,16 +5,18 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public SimpleShoot shooter;
+    public GameController controller;
 
     // Start is called before the first frame update
     void Start()
     {
         SetupRagdoll(true);
+        controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
     Vector3 GetTarget()
     {
-        return ((Camera.main.transform.position - shooter.barrelLocation.position) / 3) + new Vector3(0, 0, Random.Range(0,2));
+        return ((Camera.main.transform.position - shooter.barrelLocation.position) / 3) + new Vector3(0, 0, Random.Range(1,2));
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class Enemy : MonoBehaviour
     {
         GetComponent<Animator>().enabled = false;
         SetupRagdoll(false);
+        controller.score++;
 
         foreach (var item in Physics.OverlapSphere(hitpoint, 0.5f))
         {

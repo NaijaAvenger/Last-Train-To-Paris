@@ -6,7 +6,7 @@ using TMPro;
 public class SimpleShoot2 : MonoBehaviour
 {
     public int maxammo = 10;
-    private int currentammo;
+    public int currentammo;
 
     public TMPro.TextMeshPro text;
     public GameObject line;
